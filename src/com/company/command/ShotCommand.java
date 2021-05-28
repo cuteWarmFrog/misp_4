@@ -1,7 +1,7 @@
 package com.company.command;
 
+import com.company.History;
 import com.company.point.AreaChecker;
-import com.company.point.History;
 import com.company.point.Point;
 import com.company.point.PointValidator;
 import com.company.reader.ConsoleReader;

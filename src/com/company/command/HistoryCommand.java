@@ -1,6 +1,6 @@
 package com.company.command;
 
-import com.company.point.History;
+import com.company.History;
 import com.company.point.Point;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.company.command;
+package command;
 
 public class ExitCommand implements ICommand {
 
@@ -7,7 +7,7 @@ public class ExitCommand implements ICommand {
 
     @Override
     public void execute() {
-        System.out.println("Пока!");
+        System.out.println("Good bye!");
         System.exit(0);
     }
 }

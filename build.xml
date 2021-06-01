@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+ <project name="Final" default="run">
+    <!-- define file with properties -->
+	<xmlproperty file="properties.xml" keepRoot="false" semanticAttributes="true"/>
+    <!-- define all targets -->
+    <target name="compile" depends="native2ascii"> <!-- depends="native2ascii" -->
+        <mkdir dir="${classes}"/>
+        <javac srcdir="${src}" destdir="${classes}" includeAntRuntime="false"/>
+    </target>
+	 
+    <target name="run" depends="compile">
+        <java classname="${ant.project.name}" classpath="${classes}"/>  <!-- fork="true" for other VM -->
+    </target>
+
+	<target name="build" depends="compile">
+		<jar destfile="${build}/${ant.project.name}.jar" basedir="${classes}" excludes="Test*.class">
+			<manifest>
+				<attribute name="Main-Class" value="${ant.project.name}"/>
+			</manifest>
+		</jar>
+	</target>
+	
+	<target name="test" depends="compile">
+		<junit>
+			<classpath>
+				<pathelement location="${classes}"/>
+			</classpath>
+			<test name="TestHello"/>
+		</junit>
+	</target>
+	
+	<target name="native2ascii">
+		<native2ascii encoding="utf-8" src="${native}" dest="${src}"
+              includes="**/*.java" ext=".java"/>
+	</target> 
+	
+	<target name="diff">
+		<exec executable="git" dir = "${src}">
+			<arg value="add"/>
+			<arg value="*"/>
+		</exec>
+		<exec executable="git" dir = "${src}">
+			<arg value="commit"/>
+			<arg value="-m"/>
+			<arg value="${commit.message}"/>
+		</exec>
+	</target> 
+	
+	<target name="clean">
+        <delete dir="${build}"/>
+    </target>
+ </project>

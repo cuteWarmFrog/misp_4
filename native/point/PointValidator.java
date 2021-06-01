@@ -1,4 +1,4 @@
-package com.company.point;
+package point;
 
 import java.util.Arrays;
 import java.util.List;
@@ -22,7 +22,7 @@ public class PointValidator {
 
     private boolean checkX(double x) {
         if (!xValidValues.contains(x)) {
-            System.out.println("X должен быть из диапазона [-3, -2, -1, 0, 1, 2, 3, 4, 5]");
+            System.out.println("X must be in range [-3, -2, -1, 0, 1, 2, 3, 4, 5]");
             return false;
         }
         return true;
@@ -30,7 +30,7 @@ public class PointValidator {
 
     private boolean checkY(double y) {
         if (y < -3 || y > 5) {
-            System.out.println("Y должен пренадлежать [-3, 5]");
+            System.out.println("Y must be between [-3, 5]");
             return false;
         }
         return true;
@@ -38,7 +38,7 @@ public class PointValidator {
 
     private boolean checkR(double r) {
         if (!rValidValues.contains(r)) {
-            System.out.println("R должен быть из диапазона [1, 2, 3, 4, 5]");
+            System.out.println("R must be in range [1, 2, 3, 4, 5]");
             return false;
         }
         return true;

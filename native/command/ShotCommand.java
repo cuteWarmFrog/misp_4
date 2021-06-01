@@ -1,10 +1,9 @@
-package com.company.command;
+package command;
 
-import com.company.History;
-import com.company.point.AreaChecker;
-import com.company.point.Point;
-import com.company.point.PointValidator;
-import com.company.reader.ConsoleReader;
+import point.AreaChecker;
+import point.Point;
+import point.PointValidator;
+import reader.ConsoleReader;
 
 import java.io.IOException;
 
@@ -21,8 +20,8 @@ public class ShotCommand implements ICommand {
 
     @Override
     public void execute() {
-        System.out.println("Введи X, Y, R через пробел.\n" +
-                "Пожалуйста, не ломай меня, мы ведь друзья!");
+        System.out.println("Type X, Y, R with whitespace.\n" +
+                "Please, don't crack me, friend!");
         System.out.print(">>> ");
 
         try {
@@ -37,15 +36,15 @@ public class ShotCommand implements ICommand {
             if (pointValidator.validatePoint(point)) {
                 point.setHit(areaChecker.checkIfShotHitArea(point));
                 History.addPoint(point);
-                System.out.println("Точка успешно добавлена.");
+                System.out.println("Point has been added successfully.");
             }
 
         } catch (IOException e) {
-            System.out.println("Беда!");
+            System.out.println("Not good!");
             System.out.println(e.getMessage());
             e.printStackTrace();
         } catch (NumberFormatException e) {
-            System.out.println("Вы ввели жижу какую-то.");
+            System.out.println("You type something... wrong.");
         }
     }
 }

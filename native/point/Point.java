@@ -1,4 +1,4 @@
-package com.company.point;
+package point;
 
 public class Point {
     private double x, y, r;
@@ -32,7 +32,7 @@ public class Point {
 
     @Override
     public String toString() {
-        String hit = isHit ? "Попав" : "Не попав";
+        String hit = isHit ? "shot hit" : "shot miss";
         return "x= " + x +
                 ", y= " + y +
                 ", r= " + r +

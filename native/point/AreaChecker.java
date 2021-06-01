@@ -1,4 +1,6 @@
-package com.company.point;
+package point;
+
+import point.Point;
 
 public class AreaChecker {
 

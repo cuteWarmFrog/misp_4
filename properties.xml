@@ -1,0 +1,11 @@
+<?xml version="1.0"?> 
+	<root-tag>
+		<src location="src"/>
+		<native location="native"/>
+		<build location="build"/>
+		<classes location="${build}/classes"/>
+		<commit>
+			<message>Commit diff</message>
+		</commit>
+	</root-tag>
+

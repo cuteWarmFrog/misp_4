@@ -1,4 +1,4 @@
-package com.company.command;
+package command;
 
 public interface ICommand {
     void execute();

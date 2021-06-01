@@ -1,6 +1,6 @@
-package com.company.invoker;
+package invoker;
 
-import com.company.command.*;
+import command.*;
 
 import java.util.Map;
 import java.util.TreeMap;

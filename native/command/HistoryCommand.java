@@ -1,7 +1,6 @@
-package com.company.command;
+package command;
 
-import com.company.History;
-import com.company.point.Point;
+import point.Point;
 
 import java.util.List;
 
@@ -13,7 +12,7 @@ public class HistoryCommand implements ICommand {
     @Override
     public void execute() {
         List<Point> points = History.getShotsHistory();
-        System.out.println("Всего выстрелов: " + points.size());
+        System.out.println("All shots: " + points.size());
         for (Point point : points) {
             System.out.println(point);
         }

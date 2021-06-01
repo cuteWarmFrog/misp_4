@@ -3,7 +3,7 @@
     <!-- define file with properties -->
 	<xmlproperty file="properties.xml" keepRoot="false" semanticAttributes="true"/>
     <!-- define all targets -->
-    <target name="compile" depends="native2ascii"> <!-- depends="native2ascii" -->
+    <target name="compile" depends="clean, native2ascii"> <!-- depends="native2ascii" -->
         <mkdir dir="${classes}"/>
         <javac srcdir="${src}" destdir="${classes}" includeAntRuntime="false"/>
     </target>

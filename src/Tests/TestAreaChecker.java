@@ -1,9 +1,11 @@
-import point.AreaChecker;
+package Tests;
 
 import org.junit.Test;
+import point.AreaChecker;
 import point.Point;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class TestAreaChecker {
     @Test
